@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/prefectureFragment"
+        android:name="com.example.roomimpl.PrefectureFragment"
+        android:label="fragment_prefecture"
+        tools:layout="@layout/fragment_prefecture" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.roomimpl.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/mainToPrefecture"
+            app:destination="@id/prefectureFragment" />
+    </fragment>
+</navigation>
