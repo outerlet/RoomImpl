@@ -1,8 +1,8 @@
-package com.example.roomimpl
+package com.example.roomimpl.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
+import com.example.roomimpl.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

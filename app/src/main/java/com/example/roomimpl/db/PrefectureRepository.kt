@@ -1,4 +1,4 @@
-package com.example.roomimpl
+package com.example.roomimpl.db
 
 import android.content.Context
 import com.example.roomimpl.db.Prefecture

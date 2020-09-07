@@ -7,16 +7,24 @@
 
     <fragment
         android:id="@+id/prefectureFragment"
-        android:name="com.example.roomimpl.PrefectureFragment"
+        android:name="com.example.roomimpl.ui.PrefectureFragment"
         android:label="fragment_prefecture"
         tools:layout="@layout/fragment_prefecture" />
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.roomimpl.MainFragment"
+        android:name="com.example.roomimpl.ui.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/mainToPrefecture"
             app:destination="@id/prefectureFragment" />
+        <action
+            android:id="@+id/mainToMember"
+            app:destination="@id/memberFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/memberFragment"
+        android:name="com.example.roomimpl.ui.MemberFragment"
+        android:label="fragment_member"
+        tools:layout="@layout/fragment_member" />
 </navigation>

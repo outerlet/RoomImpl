@@ -1,4 +1,4 @@
-package com.example.roomimpl
+package com.example.roomimpl.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,13 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.roomimpl.R
 import com.example.roomimpl.db.Prefecture
-import com.example.roomimpl.viewmodel.MainViewModelFactory
+import com.example.roomimpl.viewmodel.PrefectureViewModelFactory
 import com.example.roomimpl.viewmodel.PrefectureViewModel
 import kotlinx.android.synthetic.main.fragment_prefecture.*
 
 class PrefectureFragment : Fragment() {
-    private val mViewModel by viewModels<PrefectureViewModel> { MainViewModelFactory() }
+    private val mViewModel by viewModels<PrefectureViewModel> { PrefectureViewModelFactory() }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
         inflater.inflate(R.layout.fragment_prefecture, container, false)
@@ -33,8 +34,13 @@ class PrefectureFragment : Fragment() {
         }
 
         button.setOnClickListener {
-            val pref = Prefecture(editPrefName.text.toString(), editPrefNameKana.text.toString())
-            mViewModel.addPrefecture(requireContext(), pref)
+            mViewModel.addPrefecture(
+                requireContext(),
+                Prefecture(editPrefName.text.toString(), editPrefNameKana.text.toString())
+            )
+
+            editPrefName.text.clear()
+            editPrefNameKana.text.clear()
         }
 
         mViewModel.getPrefectures(requireContext())
